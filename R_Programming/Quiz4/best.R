@@ -17,8 +17,10 @@ best <- function(state, outcome) {
   colname <- outcomes[outcome]
   
   data.state <- my_data[my_data$State==state,]
-  
-  idx <- which.min(as.double(data.state[,colname]))
+  asdouble <- as.double(data.state[,colname])
+  print(asdouble)
+  idx <- which.min(asdouble)
+  print(idx)
   data.state[idx,"Hospital.Name"]
   print(data.state[idx,"Hospital.Name"])
   
